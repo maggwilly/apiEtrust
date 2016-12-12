@@ -47,7 +47,7 @@ class Produit
     /**
      * @var string
      *
-     * @ORM\Column(name="prixDiscutable",  type="boolean")
+     * @ORM\Column(name="prixDiscutable",  type="boolean",nullable=true)
      */
     private $prixDiscutable=true;
 
@@ -61,7 +61,7 @@ class Produit
     /**
      * @var string
      *
-     * @ORM\Column(name="moq", type="string", length=255)
+     * @ORM\Column(name="moq", type="string", length=255,nullable=true)
      */
     private $moq=1;
 
