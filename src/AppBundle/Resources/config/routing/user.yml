@@ -1,0 +1,25 @@
+
+user_show:
+    path:     /show
+    defaults: { _controller: "AppBundle:User:show" }
+
+
+user_create:
+    path:     /register
+    defaults: { _controller: "AppBundle:User:create" }
+    methods:  POST
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:User:edit" }
+
+user_update:
+    path:     /update
+    defaults: { _controller: "AppBundle:User:update" }
+    methods:  [POST, PUT]
+
+user_change_password:
+    path:     /change/password
+    defaults: { _controller: "AppBundle:User:chagePassword" }
+    methods:  [POST, PUT]
+

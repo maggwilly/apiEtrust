@@ -1,0 +1,17 @@
+AppBundle\Entity\Contact:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['contact','user',full' ]
+        telephone:
+            groups: ['contact','full'  ]
+        email:
+            groups: ['contact','full'  ]
+        whatsapp:
+            groups: ['contact','full'  ]
+        fecebook:
+            groups: ['contact','full'  ]
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]                                             

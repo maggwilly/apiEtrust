@@ -1,0 +1,23 @@
+AppBundle\Entity\Livraison:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['livraison','user','produit',full' ]
+        internationnal:
+            groups: ['livraison','full'  ]
+        delais:
+            groups: ['livraison','full'  ]
+        support:
+            groups: ['livraison','full'  ]
+        expedition:
+            groups: ['livraison','full'  ]
+        domicile:
+            groups: ['livraison','full'  ]
+        enMagazin:
+            groups: ['livraison','full'  ] 
+        toutLePays:
+            groups: ['livraison','full'  ] 
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]                                             

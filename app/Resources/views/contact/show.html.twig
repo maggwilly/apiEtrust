@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contact</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ contact.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Whatsapp</th>
+                <td>{{ contact.whatsapp }}</td>
+            </tr>
+            <tr>
+                <th>Fecebook</th>
+                <td>{{ contact.fecebook }}</td>
+            </tr>
+            <tr>
+                <th>Virified</th>
+                <td>{% if contact.virified %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Virifiedat</th>
+                <td>{% if contact.virifiedAt %}{{ contact.virifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

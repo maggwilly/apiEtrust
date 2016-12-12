@@ -1,0 +1,20 @@
+AppBundle\Entity\Retour:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['retour','user','produit','full' ]
+        support:
+            groups: ['retour','full'  ]
+        remboursement:
+            groups: ['retour','full' ] 
+        moyens:
+            groups: ['retour','full' ] 
+        delais:
+            groups: ['retour','full'  ]  
+        conditions:
+            groups: ['retour','full' ]  
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]   
+                       

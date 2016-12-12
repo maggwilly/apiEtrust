@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fiscalites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomjuridique</th>
+                <th>Registre</th>
+                <th>Contribuable</th>
+                <th>Categorie</th>
+                <th>Regime</th>
+                <th>Conforme</th>
+                <th>Virified</th>
+                <th>Virifiedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fiscalite in fiscalites %}
+            <tr>
+                <td><a href="{{ path('fiscalite_show', { 'id': fiscalite.id }) }}">{{ fiscalite.id }}</a></td>
+                <td>{{ fiscalite.nomJuridique }}</td>
+                <td>{{ fiscalite.registre }}</td>
+                <td>{{ fiscalite.contribuable }}</td>
+                <td>{{ fiscalite.categorie }}</td>
+                <td>{{ fiscalite.regime }}</td>
+                <td>{% if fiscalite.conforme %}Yes{% else %}No{% endif %}</td>
+                <td>{% if fiscalite.virified %}Yes{% else %}No{% endif %}</td>
+                <td>{% if fiscalite.virifiedAt %}{{ fiscalite.virifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fiscalite_show', { 'id': fiscalite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fiscalite_edit', { 'id': fiscalite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fiscalite_new') }}">Create a new fiscalite</a>
+        </li>
+    </ul>
+{% endblock %}

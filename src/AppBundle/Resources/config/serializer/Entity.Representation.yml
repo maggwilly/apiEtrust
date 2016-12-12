@@ -1,0 +1,35 @@
+AppBundle\Entity\Representation:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['representation','user','public',full' ]
+        nom:
+            groups: ['representation','public','full'  ]
+        prenom:
+            groups: ['representation','public','full' ] 
+        fonction:
+            groups: ['representation','public','full' ] 
+        ville:
+            groups: ['representation','public','full'  ]  
+        pays:
+            groups: ['representation','public','full' ]  
+        adresse:
+            groups: ['representation','full' ] 
+        langue:
+            groups: ['representation','public','full' ] 
+        sexe:
+            groups: ['representation','full'  ]  
+        dateNaissance:
+            groups: ['representation','full' ]  
+        document:
+            groups: ['representation','full' ] 
+        numeroDoc:
+            groups: ['representation','full' ] 
+        expireDate:
+            groups: ['representation','full'  ]  
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]   
+
+                       

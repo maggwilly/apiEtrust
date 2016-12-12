@@ -1,0 +1,21 @@
+app_produit:
+    resource: "@AppBundle/Resources/config/routing/produit.yml"   
+    prefix: /produit
+
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"  
+    prefix: /user
+
+manager:
+    resource: "@AppBundle/Resources/config/routing/manager.yml"  
+    prefix: /manage
+    
+auth-tokens:
+    path:      /auth-token/create
+    defaults: { _controller: "AppBundle:AuthToken:postAuthTokens" }
+    methods:  POST
+
+auth-tokens_delete:
+    path:      /auth-token/{value}/delete
+    defaults: { _controller: "AppBundle:AuthToken:removeAuthTokens" }
+    methods:  DELETE

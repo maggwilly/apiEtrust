@@ -1,0 +1,10 @@
+
+entity_show:
+    path:    /{entity_name}/{id}/show
+    defaults: { _controller: "AppBundle:Manage:show" }
+
+entity_update:
+    path:     /{entity_name}/{id}/update
+    defaults: { _controller: "AppBundle:Manage:update" }
+    methods:  [POST, PUT]
+

@@ -1,0 +1,37 @@
+AppBundle\Entity\User:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['user', 'auth-token','full']
+        nom:
+            groups: ['user',  'auth-token','full']
+        telephone:
+            groups: ['user', 'auth-token','full'] 
+        email:
+            groups: ['user', 'auth-token','full'] 
+        enabled:
+            groups: ['user', 'auth-token','full']      
+        virified:
+            groups: ['user', 'full' ] 
+        virifiedAt:
+            groups: ['user' , 'full' ]  
+        certified:
+            groups: ['user' , 'full' ] 
+        certifiedAt:
+            groups: ['user' , 'full' ]  
+        origine:
+            groups: ['user', 'full'  ] 
+        representation:
+            groups: ['user', 'full'  ]  
+        localisation:
+            groups: ['user', 'full'  ] 
+        payement:
+            groups: ['user', 'full'  ]              
+        livraison:
+            groups: ['user' , 'full' ] 
+        retour:
+            groups: ['user' , 'full' ] 
+        contact:
+            groups: ['user', 'full'  ] 
+        fiscalite:
+            groups: ['user', 'full'  ]   

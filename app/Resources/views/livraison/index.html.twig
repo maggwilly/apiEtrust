@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Livraisons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Internationnal</th>
+                <th>Delais</th>
+                <th>Support</th>
+                <th>Expedition</th>
+                <th>Domicile</th>
+                <th>Virified</th>
+                <th>Virifiedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livraison in livraisons %}
+            <tr>
+                <td><a href="{{ path('livraison_show', { 'id': livraison.id }) }}">{{ livraison.id }}</a></td>
+                <td>{% if livraison.internationnal %}Yes{% else %}No{% endif %}</td>
+                <td>{{ livraison.delais }}</td>
+                <td>{{ livraison.support }}</td>
+                <td>{% if livraison.expedition %}Yes{% else %}No{% endif %}</td>
+                <td>{% if livraison.domicile %}Yes{% else %}No{% endif %}</td>
+                <td>{% if livraison.virified %}Yes{% else %}No{% endif %}</td>
+                <td>{% if livraison.virifiedAt %}{{ livraison.virifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('livraison_show', { 'id': livraison.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('livraison_edit', { 'id': livraison.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('livraison_new') }}">Create a new livraison</a>
+        </li>
+    </ul>
+{% endblock %}

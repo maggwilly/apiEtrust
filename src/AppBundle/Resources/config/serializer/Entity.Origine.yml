@@ -1,0 +1,25 @@
+AppBundle\Entity\Origine:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['origine','produit','user','full' ]
+        origine:
+            groups: ['origine','full'  ]
+        provenance:
+            groups: ['origine','full' ] 
+        qualite:
+            groups: ['origine','full' ] 
+        typeVente:
+            groups: ['origine','full'  ]  
+        grossiste:
+            groups: ['origine','full'  ]  
+        details:
+            groups: ['origine','full'  ]  
+        surCommande:
+            groups: ['origine','full'  ]              
+        garenti:
+            groups: ['origine','full'  ]                        
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]   

@@ -1,0 +1,25 @@
+AppBundle\Entity\Produit:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['produit','full' ]
+        nom:
+            groups: ['produit' ,'full' ]
+        prix:
+            groups: ['produit','full' ] 
+        description:
+            groups: ['produit','full' ] 
+        prix:
+            groups: ['produit' ,'full']  
+        prixDiscutable:
+            groups: ['produit' ,'full']     
+        moq:
+            groups: ['produit' ,'full']  
+        origine:
+            groups: ['produit' ,'full']  
+        livraison:
+            groups: ['produit' ,'full']     
+        payement:
+            groups: ['produit' ,'full']  
+        retour:
+                       

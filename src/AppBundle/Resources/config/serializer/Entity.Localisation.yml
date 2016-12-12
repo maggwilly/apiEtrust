@@ -1,0 +1,21 @@
+AppBundle\Entity\Localisation:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['localisation','user',full' ]
+        lat:
+            groups: ['localisation','full'  ]
+        lon:
+            groups: ['localisation','full'  ]
+        lieu:
+            groups: ['localisation','full'  ]
+        ville:
+            groups: ['localisation','full'  ]
+        pays:
+            groups: ['localisation','full'  ]
+        description:
+            groups: ['localisation','full'  ] 
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]                                             

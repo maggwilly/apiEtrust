@@ -1,0 +1,18 @@
+AppBundle\Entity\Payement:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['payement','produit','user','full' ]
+        orangeMoney:
+            groups: ['payement','full'  ]
+        mtnMoney:
+            groups: ['payement','full' ] 
+        payementLivraison:
+            groups: ['payement','full' ] 
+        moneyTransfert:
+            groups: ['payement','full'  ]  
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]   
+                       

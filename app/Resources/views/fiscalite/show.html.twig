@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fiscalite</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fiscalite.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomjuridique</th>
+                <td>{{ fiscalite.nomJuridique }}</td>
+            </tr>
+            <tr>
+                <th>Registre</th>
+                <td>{{ fiscalite.registre }}</td>
+            </tr>
+            <tr>
+                <th>Contribuable</th>
+                <td>{{ fiscalite.contribuable }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ fiscalite.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Regime</th>
+                <td>{{ fiscalite.regime }}</td>
+            </tr>
+            <tr>
+                <th>Conforme</th>
+                <td>{% if fiscalite.conforme %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Virified</th>
+                <td>{% if fiscalite.virified %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Virifiedat</th>
+                <td>{% if fiscalite.virifiedAt %}{{ fiscalite.virifiedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fiscalite_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('fiscalite_edit', { 'id': fiscalite.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

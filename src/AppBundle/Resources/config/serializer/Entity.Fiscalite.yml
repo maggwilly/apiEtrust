@@ -1,0 +1,21 @@
+AppBundle\Entity\Fiscalite:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['fiscalite','user',full' ]
+        nomJuridique:
+            groups: ['fiscalite','full'  ]
+        registre:
+            groups: ['fiscalite','full'  ]
+        contribuable:
+            groups: ['fiscalite','full'  ]
+        categorie:
+            groups: ['fiscalite','full'  ]
+        regime:
+            groups: ['fiscalite','full'  ]
+        conforme:
+            groups: ['fiscalite','full'  ] 
+        virified:
+            groups: ['full'  ] 
+        virifiedAt:
+            groups: ['full'  ]                                             
