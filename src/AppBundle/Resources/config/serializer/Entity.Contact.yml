@@ -2,7 +2,7 @@ AppBundle\Entity\Contact:
     exclusion_policy: none
     properties:
         id:
-            groups: ['contact','user',full' ]
+            groups: ['contact','user','full' ]
         telephone:
             groups: ['contact','full'  ]
         email:

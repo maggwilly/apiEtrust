@@ -2,7 +2,7 @@ AppBundle\Entity\Representation:
     exclusion_policy: none
     properties:
         id:
-            groups: ['representation','user','public',full' ]
+            groups: ['representation','user','public','full' ]
         nom:
             groups: ['representation','public','full'  ]
         prenom:

@@ -2,7 +2,7 @@ AppBundle\Entity\Livraison:
     exclusion_policy: none
     properties:
         id:
-            groups: ['livraison','user','produit',full' ]
+            groups: ['livraison','produit','user','full' ]
         internationnal:
             groups: ['livraison','full'  ]
         delais:

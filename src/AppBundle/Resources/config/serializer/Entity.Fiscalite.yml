@@ -2,7 +2,7 @@ AppBundle\Entity\Fiscalite:
     exclusion_policy: none
     properties:
         id:
-            groups: ['fiscalite','user',full' ]
+            groups: ['fiscalite','user','full' ]
         nomJuridique:
             groups: ['fiscalite','full'  ]
         registre:
