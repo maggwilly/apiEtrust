@@ -1,0 +1,12 @@
+AppBundle\Entity\Categorie:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['categorie','full' ]
+        nom:
+            groups: ['categorie','full'  ]
+        frNom:
+            groups: ['categorie','full'  ]
+        enNom:
+            groups: ['categorie','full'  ]
+                                                                                                                                    

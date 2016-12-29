@@ -8,9 +8,12 @@ use FOS\RestBundle\Controller\Annotations as Rest; // alias pour toutes les anno
 use FOS\RestBundle\View\View; // Utilisation de la vue de FOSRestBundle
 use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
+use AppBundle\Event\EtrustEvents;
+use AppBundle\Event\UserEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use FOS\RestBundle\Controller\Annotations\Version;
+use AppBundle\Entity\AuthToken;
 /**
  * User controller.
  *
@@ -51,10 +54,14 @@ class UserController extends Controller
             // le mot de passe en claire est encodé avant la sauvegarde
             $encoded = $encoder->encodePassword($entity, $entity->getPlainPassword());
             $entity->setPassword($encoded)->setEnabled(true)->setRoles(array('ROLE_USER'));
+            $authToken=AuthToken::create($entity);
             $em->persist($entity);
+            $em->persist($authToken);
             $em->flush();
-
-           return ['success'=>true,'data'=>$entity];
+            $event= new UserEvent($entity);
+            $this->get('event_dispatcher')->dispatch(EtrustEvents::onObjetCreated, $event);
+           return ['success'=>true,'data'=>$authToken]
+           ;
         }
 
         return  $form;
@@ -78,15 +85,17 @@ class UserController extends Controller
      * Displays a form to create a new User entity.
      *
      */
-    public function newAction()
+    public function requestForCertificationAction()
     {
-        $entity = new User();
-        $form   = $this->createCreateForm($entity);
-
-        return $this->render('AppBundle:User:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+        $em = $this->getDoctrine()->getManager();
+          $entity = $this->getConnectedUser();
+        if (!$entity) {
+             throw $this->createNotFoundException('Unable to find User entity.');
+        }
+        $entity->setCertificationRequestedAt(new \DateTime());
+           $em->flush();
+       //create element
+       return ['success'=>true];
     }
 
     /**
@@ -95,7 +104,6 @@ class UserController extends Controller
      */
     public function showAction()
     {
-        $em = $this->getDoctrine()->getManager();
 
         $entity = $this->getConnectedUser();
 
@@ -103,15 +111,10 @@ class UserController extends Controller
             throw $this->createNotFoundException('Unable to find User entity.');
         }
 
-
-       return ['success'=>true,'data'=>$entity];
+       return $entity;
     }
 
     /**
-     * Displays a form to edit an existing User entity.
-     *
-     */
-         /**
      * Finds and displays a User entity.
      *@Rest\View(serializerGroups={"user"})
      */
@@ -145,7 +148,8 @@ class UserController extends Controller
 
         if ($form->isValid()) {
             $em->flush();
-
+            $event= new UserEvent($entity);
+            $this->get('event_dispatcher')->dispatch(EtrustEvents::onObjetCreated, $event);
            return ['success'=>true,'data'=>$entity];
         }
 

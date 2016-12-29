@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,32 +44,13 @@ class AuthTokenController extends Controller
         if (!$isPasswordValid) { // Le mot de passe n'est pas correct
             return $this->invalidCredentials();
         }
-
-        $authToken = new AuthToken();
-        $str = uniqid();
-        $authToken->setValue(md5($str));
-        $authToken->setCreatedAt(new \DateTime('now'));
-        $authToken->setUser($user);
-
+        $authToken=AuthToken::create($user);
         $em->persist($authToken);
         $em->flush();
-
-      return $this->createToken($user);
+       return ['success'=>true,'data'=>$authToken];
     }
 
-      public function createToken($user){
-        $em = $this->getDoctrine()->getManager();
-           $authToken = new AuthToken();
-        $str = uniqid();
-        $authToken->setValue(md5($str));
-        $authToken->setCreatedAt(new \DateTime('now'));
-        $authToken->setUser($user);
-
-        $em->persist($authToken);
-        $em->flush();
-
-      return $authToken;
-   }
+  
 
     /**
      * @Rest\View()
@@ -96,6 +78,7 @@ private function getConnectedUser(){
 
     private function invalidCredentials()
     {
+      
         return \FOS\RestBundle\View\View::create(['message' => 'Invalid credentials'], Response::HTTP_BAD_REQUEST);
     }
 }

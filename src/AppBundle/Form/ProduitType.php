@@ -14,15 +14,37 @@ class ProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom')
-        ->add('categorie','entity',array('class' => 'AppBundle:Categorie'))
+        ->add('categorie')
         ->add('description')
         ->add('prix')
-        ->add('moq')
-       ->add('origine', OrigineType::class)
+        ->add('lieu')
+        ->add('utilDate','date', array(
+                 'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'invalid_message' => 'Validation date',
+                'error_bubbling' => true,
+                'input' => 'datetime' # return a Datetime object (*)
+            ))
+           ->add('utilTime','datetime', array(
+              'widget' => 'single_text',
+                'format' => 'HH:mm',
+                'invalid_message' => 'Validation date',
+                'error_bubbling' => true,
+                'input' => 'datetime' # return a Datetime object (*)
+            ))
+        ->add('imageFile')
+        ->add('typeAnnonce')
+        ->add('descriptionLieu')
+        ->add('utilDate')
+        ->add('utilTime')
+        ->add('lat')
+        ->add('lon')
+        ->add('prixDiscutable')
+        ->add('origine', OrigineType::class)
         ->add('livraison',LivraisonType::class)
         ->add('payement',PayementType::class)
         ->add('retour',RetourType::class)
-        ->add('prixDiscutable');
+     ;
     }
     
     /**

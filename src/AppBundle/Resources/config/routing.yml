@@ -1,10 +1,19 @@
 app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"   
     prefix: /produit
+    
+categories:
+    path:    /utils
+    defaults: { _controller: "AppBundle:Produit:utils" }
+    methods: GET
 
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"  
     prefix: /user
+
+app_publicite:
+    resource: "@AppBundle/Resources/config/routing/publicite.yml"  
+    prefix: /publicite
 
 manager:
     resource: "@AppBundle/Resources/config/routing/manager.yml"  
@@ -16,6 +25,26 @@ auth-tokens:
     methods:  POST
 
 auth-tokens_delete:
-    path:      /auth-token/{value}/delete
+    path:      /auth-token/delete
     defaults: { _controller: "AppBundle:AuthToken:removeAuthTokens" }
-    methods:  DELETE
+    methods:  [DELETE,GET]
+
+locals:
+    path:      /locals/data
+    defaults: { _controller: "AppBundle:App:locals"}
+    methods:  GET
+
+abaout:
+    path:      /abaout
+    defaults: { _controller: "AppBundle:App:abaout"}
+    methods:  GET   
+
+help:
+    path:      /help
+    defaults: { _controller: "AppBundle:App:help"}
+    methods:  GET
+
+news:
+    path:      /cgu
+    defaults: { _controller: "AppBundle:App:cgu"}
+    methods:  GET

@@ -64,10 +64,10 @@ class Origine extends \AppBundle\Entity\Origine implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'origine', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'provenance', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'qualite', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'typeVente', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'grossiste', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'details', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'garenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'surCommande', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'origine', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'provenance', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'qualite', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'typeVente', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'grossiste', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'moq', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'devise', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'details', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'garenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'dureeGarenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'surCommande', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'fournie', 'requestForVerification', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'sexeAge');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'origine', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'provenance', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'qualite', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'typeVente', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'grossiste', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'details', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'garenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'surCommande', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'origine', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'provenance', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'qualite', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'typeVente', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'grossiste', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'moq', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'devise', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'details', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'garenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'dureeGarenti', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'surCommande', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'fournie', 'requestForVerification', '' . "\0" . 'AppBundle\\Entity\\Origine' . "\0" . 'sexeAge');
     }
 
     /**
@@ -279,6 +279,28 @@ class Origine extends \AppBundle\Entity\Origine implements \Doctrine\ORM\Proxy\P
     /**
      * {@inheritDoc}
      */
+    public function setMoq($moq)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMoq', array($moq));
+
+        return parent::setMoq($moq);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMoq()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMoq', array());
+
+        return parent::getMoq();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setDetails($details)
     {
 
@@ -417,6 +439,160 @@ class Origine extends \AppBundle\Entity\Origine implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSurCommande', array());
 
         return parent::getSurCommande();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFournie($fournie)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFournie', array($fournie));
+
+        return parent::setFournie($fournie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFournie()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFournie', array());
+
+        return parent::getFournie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDevise($devise)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDevise', array($devise));
+
+        return parent::setDevise($devise);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDevise()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDevise', array());
+
+        return parent::getDevise();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDureeGarenti($dureeGarenti)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDureeGarenti', array($dureeGarenti));
+
+        return parent::setDureeGarenti($dureeGarenti);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDureeGarenti()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDureeGarenti', array());
+
+        return parent::getDureeGarenti();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSexeAge($sexe)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSexeAge', array($sexe));
+
+        return parent::setSexeAge($sexe);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSexeAge()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSexeAge', array());
+
+        return parent::getSexeAge();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

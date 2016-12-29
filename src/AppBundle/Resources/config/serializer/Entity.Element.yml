@@ -1,0 +1,11 @@
+AppBundle\Entity\Element:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['element','user','full' ]
+        titre:
+            groups: ['element','full'  ]
+        description:
+            groups: ['element',full'  ]
+        dateSave:
+            groups: ['element',full'  ]

@@ -76,11 +76,12 @@ fos_rest:
         formats:
             xml:  true
             json: true
+            html: true
         templating_formats:
             html: true
     format_listener:
         rules:
-            - { path: ^/, priorities: [json], fallback_format: 'json'}
+            - { path: ^/, priorities: [json,html], fallback_format: 'json'}
     routing_loader:
         include_format: false
     versioning:
@@ -110,4 +111,4 @@ fos_rest:
         enabled: true
 
     serializer:
-        serialize_null:  true
+        serialize_null:  false

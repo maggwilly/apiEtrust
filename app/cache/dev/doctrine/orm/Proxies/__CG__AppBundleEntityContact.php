@@ -64,10 +64,10 @@ class Contact extends \AppBundle\Entity\Contact implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'whatsapp', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'fecebook', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'whatsapp', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'fecebook', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'site', 'requestForVerification');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'whatsapp', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'fecebook', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'whatsapp', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'fecebook', '' . "\0" . 'AppBundle\\Entity\\Contact' . "\0" . 'site', 'requestForVerification');
     }
 
     /**
@@ -329,6 +329,94 @@ class Contact extends \AppBundle\Entity\Contact implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClassType', array());
 
         return parent::getClassType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSite($site)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSite', array($site));
+
+        return parent::setSite($site);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSite()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSite', array());
+
+        return parent::getSite();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

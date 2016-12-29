@@ -10,14 +10,14 @@ AppBundle\Entity\User:
         email:
             groups: ['user', 'auth-token','full'] 
         enabled:
-            groups: ['user', 'auth-token','full']      
+            groups: ['user', 'auth-token','full']   
+        uniqueid:
+            groups: ['user', 'auth-token','full']   
+        image:
+            groups: ['user', 'auth-token','full']     
         virified:
             groups: ['user', 'full' ] 
         virifiedAt:
-            groups: ['user' , 'full' ]  
-        certified:
-            groups: ['user' , 'full' ] 
-        certifiedAt:
             groups: ['user' , 'full' ]  
         origine:
             groups: ['user', 'full'  ] 
@@ -34,4 +34,6 @@ AppBundle\Entity\User:
         contact:
             groups: ['user', 'full'  ] 
         fiscalite:
-            groups: ['user', 'full'  ]   
+            groups: ['user', 'full'  ]  
+        requestForVerification:
+            groups: ['user' , 'full' ]  

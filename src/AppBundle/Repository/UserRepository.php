@@ -11,10 +11,10 @@ namespace AppBundle\Repository;
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
 
-public function findByOrgan($organ)
+public function findByUser($organ)
 {
   $qb = $this->createQueryBuilder('u')
-     ->where('u.organ= :organ')->setParameter('organ', $organ);   
+     ->where('u.user= :user')->setParameter('user', $organ);   
   return $qb->getQuery()->getResult();
 }
 

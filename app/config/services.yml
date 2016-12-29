@@ -17,3 +17,9 @@ services:
         class:     AppBundle\Security\AuthTokenAuthenticator
         arguments: ["@security.http_utils"]
         public:    false
+
+    create_listener:
+        class: AppBundle\Event\CreateListener
+        arguments: ["@jms_serializer"]
+        tags:
+         - { name: kernel.event_listener, event: object.created, method: onObjetCreated }

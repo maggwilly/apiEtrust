@@ -13,7 +13,28 @@ class RepresentationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('fonction')->add('prenom')->add('ville')->add('adresse')->add('sexe')->add('dateNaissance')->add('document')->add('numeroDoc')->add('expireDate')->add('virified')->add('virifiedAt')        ;
+        $builder->add('nom')
+        ->add('fonction')
+        ->add('prenom')
+        ->add('defined')
+        ->add('ville')
+        ->add('pays')
+        ->add('langue')
+        ->add('adresse')
+        ->add('telephone')
+        ->add('email')
+        ->add('sexe')
+        ->add('dateNaissance')
+        ->add('document')
+        ->add('fournie')
+        ->add('numeroDoc')
+        ->add('expireDate','date', array(
+                 'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'invalid_message' => 'Validation date',
+                'error_bubbling' => true,
+                'input' => 'datetime' # return a Datetime object (*)
+            ))       ;
     }
     
     /**
@@ -22,7 +43,7 @@ class RepresentationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Representation'
+            'data_class' => 'AppBundle\Entity\Representation','csrf_protection' => false
         ));
     }
 

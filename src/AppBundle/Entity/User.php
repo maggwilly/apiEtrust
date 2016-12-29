@@ -37,6 +37,13 @@ class User implements UserInterface
      * @ORM\Column(name="telephone", type="string", length=255)
      */
     private $telephone;
+
+        /**
+     * @ORM\Column(type="string", length=700, nullable=true)
+     */
+    protected $langue;
+
+
    /**
      * @var string
      *
@@ -88,6 +95,11 @@ class User implements UserInterface
    * @ORM\JoinColumn(nullable=true)
    */
     protected $origine;
+ /**
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
 
 
     /**
@@ -95,6 +107,12 @@ class User implements UserInterface
    * @ORM\JoinColumn(nullable=true)
    */
     protected $livraison;
+
+      /**
+   * @ORM\OneToMany(targetEntity="AppBundle\Entity\Element", mappedBy="user" ,cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $elements;
 
     /**
    * @ORM\OneToOne(targetEntity="AppBundle\Entity\Payement", cascade={"persist","remove"})
@@ -127,19 +145,13 @@ class User implements UserInterface
      * @ORM\Column(name="virified_at", type="datetime", nullable=true)
      */
     private $virifiedAt;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="certified", type="boolean", nullable=true)
-     */
-    private $certified=false;
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="certified_at", type="datetime", nullable=true)
-     */
-    private $certifiedAt;
+  /**
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist", "remove"} ,orphanRemoval=true)
+    @ORM\JoinColumn(nullable=true)
+   */
+    private $image;
+  
+    private $imageFile;
 
     /**
      * @var array
@@ -169,6 +181,32 @@ class User implements UserInterface
 
     }
 
+    
+  public function setImageFile($file)
+  {
+    $this->imageFile = $file;
+    if (null === $this->imageFile) {
+      return;
+    }
+    $this->setImage(new Image($this->imageFile,$this->nom));
+  }
+
+
+  public function getImageFile()
+  {
+    return $this->imageFile;
+  }
+
+  public function setImage(\AppBundle\Entity\Image $image = null)
+  {
+    $this->image = $image;
+  }
+
+  public function getImage()
+  {
+    return $this->image;
+  }
+
 /**
 * @ORM\PrePersist
 */
@@ -181,10 +219,8 @@ public function prePersist(){
    $this->livraison=new Livraison();
    $this->payement=new Payement();
    $this->retour=new Retour();
-
-
-
 }
+    
     /**
      * Get id
      *
@@ -616,51 +652,7 @@ public function setEnabled($enabled)
         return $this->virifiedAt;
     }
 
-    /**
-     * Set certified
-     *
-     * @param boolean $certified
-     * @return User
-     */
-    public function setCertified($certified)
-    {
-        $this->certified = $certified;
 
-        return $this;
-    }
-
-    /**
-     * Get certified
-     *
-     * @return boolean 
-     */
-    public function getCertified()
-    {
-        return $this->certified;
-    }
-
-    /**
-     * Set certifiedAt
-     *
-     * @param \DateTime $certifiedAt
-     * @return User
-     */
-    public function setCertifiedAt($certifiedAt)
-    {
-        $this->certifiedAt = $certifiedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get certifiedAt
-     *
-     * @return \DateTime 
-     */
-    public function getCertifiedAt()
-    {
-        return $this->certifiedAt;
-    }
 
     /**
      * Set ceatedAt
@@ -683,5 +675,84 @@ public function setEnabled($enabled)
     public function getCreatedAt()
     {
         return $this->ceatedAt;
+    }
+
+    /**
+     * Set langue
+     *
+     * @param string $langue
+     * @return User
+     */
+    public function setLangue($langue)
+    {
+        $this->langue = $langue;
+
+        return $this;
+    }
+
+    /**
+     * Get langue
+     *
+     * @return string 
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return User
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
+    }
+
+    /**
+     * Add elements
+     *
+     * @param \AppBundle\Entity\Element $elements
+     * @return User
+     */
+    public function addElement(\AppBundle\Entity\Element $elements)
+    {
+        $this->elements[] = $elements;
+
+        return $this;
+    }
+
+    /**
+     * Remove elements
+     *
+     * @param \AppBundle\Entity\Element $elements
+     */
+    public function removeElement(\AppBundle\Entity\Element $elements)
+    {
+        $this->elements->removeElement($elements);
+    }
+
+    /**
+     * Get elements
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getElements()
+    {
+        return $this->elements;
     }
 }

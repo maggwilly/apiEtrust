@@ -105,16 +105,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // app
+        if (rtrim($pathinfo, '/') === '') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_app;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'app');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'app',);
+        }
+        not_app:
+
         if (0 === strpos($pathinfo, '/produit')) {
             // produit
-            if (rtrim($pathinfo, '/') === '/produit') {
+            if ($pathinfo === '/produit/list') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_produit;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'produit');
                 }
 
                 return array (  '_controller' => 'AppBundle\\Controller\\ProduitController::indexAction',  '_route' => 'produit',);
@@ -122,13 +133,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_produit:
 
             // produit_show
-            if (preg_match('#^/produit/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+            if ($pathinfo === '/produit/show') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_produit_show;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'produit_show')), array (  '_controller' => 'AppBundle\\Controller\\ProduitController::showAction',));
+                return array (  '_controller' => 'AppBundle\\Controller\\ProduitController::showAction',  '_route' => 'produit_show',);
             }
             not_produit_show:
 
@@ -178,49 +189,125 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        if (0 === strpos($pathinfo, '/user')) {
-            // user_show
-            if ($pathinfo === '/user/show') {
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::showAction',  '_route' => 'user_show',);
-            }
-
-            // user_create
-            if ($pathinfo === '/user/register') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_user_create;
+        if (0 === strpos($pathinfo, '/u')) {
+            // categories
+            if ($pathinfo === '/utils') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_categories;
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::createAction',  '_route' => 'user_create',);
+                return array (  '_controller' => 'AppBundle\\Controller\\ProduitController::utilsAction',  '_route' => 'categories',);
             }
-            not_user_create:
+            not_categories:
 
-            // user_edit
-            if (preg_match('#^/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'AppBundle\\Controller\\UserController::editAction',));
-            }
-
-            // user_update
-            if ($pathinfo === '/user/update') {
-                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
-                    $allow = array_merge($allow, array('POST', 'PUT'));
-                    goto not_user_update;
+            if (0 === strpos($pathinfo, '/user')) {
+                // user_show
+                if ($pathinfo === '/user/show') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::showAction',  '_route' => 'user_show',);
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::updateAction',  '_route' => 'user_update',);
-            }
-            not_user_update:
+                // user_create
+                if ($pathinfo === '/user/register') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_user_create;
+                    }
 
-            // user_change_password
-            if ($pathinfo === '/user/change/password') {
-                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
-                    $allow = array_merge($allow, array('POST', 'PUT'));
-                    goto not_user_change_password;
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::createAction',  '_route' => 'user_create',);
+                }
+                not_user_create:
+
+                // user_edit
+                if (preg_match('#^/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'AppBundle\\Controller\\UserController::editAction',));
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\UserController::chagePasswordAction',  '_route' => 'user_change_password',);
+                // user_update
+                if ($pathinfo === '/user/update') {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_user_update;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::updateAction',  '_route' => 'user_update',);
+                }
+                not_user_update:
+
+                // user_change_password
+                if ($pathinfo === '/user/change/password') {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_user_change_password;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::chagePasswordAction',  '_route' => 'user_change_password',);
+                }
+                not_user_change_password:
+
             }
-            not_user_change_password:
+
+        }
+
+        if (0 === strpos($pathinfo, '/publicite')) {
+            // publicite_index
+            if (rtrim($pathinfo, '/') === '/publicite') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_publicite_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'publicite_index');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\PubliciteController::indexAction',  '_route' => 'publicite_index',);
+            }
+            not_publicite_index:
+
+            // publicite_show
+            if ($pathinfo === '/publicite/show') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_publicite_show;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\PubliciteController::showAction',  '_route' => 'publicite_show',);
+            }
+            not_publicite_show:
+
+            // publicite_new
+            if ($pathinfo === '/publicite/create') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_publicite_new;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\PubliciteController::createAction',  '_route' => 'publicite_new',);
+            }
+            not_publicite_new:
+
+            // publicite_update
+            if (preg_match('#^/publicite/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_publicite_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'publicite_update')), array (  '_controller' => 'AppBundle\\Controller\\PubliciteController::updateAction',));
+            }
+            not_publicite_update:
+
+            // publicite_delete
+            if ($pathinfo === '/publicite/delete') {
+                if (!in_array($this->context->getMethod(), array('DELETE', 'GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('DELETE', 'GET', 'HEAD'));
+                    goto not_publicite_delete;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\PubliciteController::deleteAction',  '_route' => 'publicite_delete',);
+            }
+            not_publicite_delete:
 
         }
 
@@ -256,17 +343,61 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             not_authtokens:
 
             // auth-tokens_delete
-            if (preg_match('#^/auth\\-token/(?P<value>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
+            if ($pathinfo === '/auth-token/delete') {
+                if (!in_array($this->context->getMethod(), array('DELETE', 'GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('DELETE', 'GET', 'HEAD'));
                     goto not_authtokens_delete;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'auth-tokens_delete')), array (  '_controller' => 'AppBundle\\Controller\\AuthTokenController::removeAuthTokensAction',));
+                return array (  '_controller' => 'AppBundle\\Controller\\AuthTokenController::removeAuthTokensAction',  '_route' => 'auth-tokens_delete',);
             }
             not_authtokens_delete:
 
         }
+
+        // locals
+        if ($pathinfo === '/locals/data') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_locals;
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\AppController::localsAction',  '_route' => 'locals',);
+        }
+        not_locals:
+
+        // abaout
+        if ($pathinfo === '/abaout') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_abaout;
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\AppController::abaoutAction',  '_route' => 'abaout',);
+        }
+        not_abaout:
+
+        // help
+        if ($pathinfo === '/help') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_help;
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\AppController::helpAction',  '_route' => 'help',);
+        }
+        not_help:
+
+        // news
+        if ($pathinfo === '/cgu') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_news;
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\AppController::cguAction',  '_route' => 'news',);
+        }
+        not_news:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

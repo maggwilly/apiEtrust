@@ -17,7 +17,12 @@ class PayementType extends AbstractType
         ->add('orangeMoney')
         ->add('mtnMoney')
         ->add('payementLivraison')
-        ->add('moneyTransfert') ;
+        ->add('moneyTransfert')
+        ->add('defined')
+        ->add('mobileTransfert')
+        ->add('apresReception')
+        ->add('fournie')
+       ;
     }
     
     /**

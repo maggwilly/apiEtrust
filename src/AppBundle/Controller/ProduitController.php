@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest; // alias pour toutes les annotations
 use FOS\RestBundle\View\View; // Utilisation de la vue de FOSRestBundle
 use AppBundle\Entity\Produit;
+use AppBundle\Event\ProduitEvent;
+use AppBundle\Event\EtrustEvents;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Form\ProduitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -24,6 +26,7 @@ class ProduitController extends Controller
      * @QueryParam(name="offset", requirements="\d+", default="", description="Index de début de la pagination")
      * @QueryParam(name="limit", requirements="\d+", default="", description="Index de fin de la pagination")
      *  @QueryParam(name="nom", default="", description="nom e recherche")
+     *@Security("has_role('ROLE_USER')")
      */
     public function indexAction(Request $request, ParamFetcher $paramFetcher)
     {
@@ -49,7 +52,17 @@ class ProduitController extends Controller
         }
        return $qb->getQuery()->getResult();
     }
-   
+       /**
+     * Lists all Produit entities.
+     * @Rest\View(serializerGroups={"event"})
+     */
+      public function utilsAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $this->getConnectedUser();
+        $events= $em->getRepository('AppBundle:Event')->findByLocality($entity->getLocalisation()->getPays(), $entity->getLocalisation()->getVille()); 
+       return $events;
+    }
     /**
      * Creates a new Produit entity.
      *@Rest\View(serializerGroups={"produit"})
@@ -61,11 +74,13 @@ class ProduitController extends Controller
         $entity->setUser($user);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-        $form->submit($request->request->all()); // Validation des données
+        $form->submit($request->request->all(),false); // Validation des d
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $event= new ProduitEvent($entity);
+            $this->get('event_dispatcher')->dispatch(EtrustEvents::onObjetCreated, $event);
            return ['success'=>true,'data'=>$entity];
         }
         return  $form;
@@ -86,17 +101,15 @@ class ProduitController extends Controller
      * Creates a new Produit entity.
      *@Rest\View(serializerGroups={"full"})
      */
-    public function showAction($id)
+    public function showAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Produit')->find($id);
+        $entity = $em->getRepository('AppBundle:Produit')->find($request->get('id'));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Produit entity.');
         }
-
-
         return  $entity;
     }
 
@@ -132,7 +145,8 @@ class ProduitController extends Controller
 
         if ($form->isValid()) {
             $em->flush();
-
+            $event= new ProduitEvent($entity);
+            $this->get('event_dispatcher')->dispatch(EtrustEvents::onObjetCreated, $event);
            return ['success'=>true,'data'=>$entity];
         }
 
@@ -155,7 +169,7 @@ class ProduitController extends Controller
 
 
 
-private function getConnectedUser(){
+    private function getConnectedUser(){
     return $this->get('security.token_storage')->getToken()->getUser();
 }
 }

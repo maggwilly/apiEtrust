@@ -1,0 +1,21 @@
+AppBundle\Entity\Publicite:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['publicite','produit','full' ]
+        startDate:
+            groups: ['publicite','full'  ]
+        startTime:
+            groups: ['publicite','full'  ]
+        pays:
+            groups: ['publicite','full'  ]
+        ville:
+            groups: ['publicite','full'  ]
+        sexeAge:
+            groups: ['publicite','full'  ]
+        couverture:
+            groups: ['publicite','full'  ]
+        status:
+            groups: ['publicite','full'  ] 
+        payementProcess:
+            groups: ['publicite','full'  ] 

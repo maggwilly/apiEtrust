@@ -11,7 +11,12 @@ AppBundle\Entity\Contact:
             groups: ['contact','full'  ]
         fecebook:
             groups: ['contact','full'  ]
-        virified:
+        site:
+            groups: ['contact','full'  ]
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]                                             
+        fournie:
+            groups: ['full'  ]             
+        requestForVerification:
+            groups: ['contact' , 'full' ]
+    

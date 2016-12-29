@@ -28,10 +28,20 @@ class Categorie
      */
     private $nom;
 
+    /**
+     * @var string
+     * @ORM\Column(name="fr_nom", type="string", length=255, nullable=true)
+     */
+    private $frNom;
 
     /**
-     * Get id
+     * @var string
      *
+     * @ORM\Column(name="en_nom", type="string", length=255, nullable=true)
+     */
+    private $enNom;
+    /**
+     * Get id
      * @return integer 
      */
     public function getId()
@@ -41,7 +51,6 @@ class Categorie
 
     /**
      * Set nom
-     *
      * @param string $nom
      * @return Categorie
      */
@@ -60,5 +69,51 @@ class Categorie
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set frNom
+     *
+     * @param string $frNom
+     * @return Categorie
+     */
+    public function setFrNom($frNom)
+    {
+        $this->frNom = $frNom;
+
+        return $this;
+    }
+
+    /**
+     * Get frNom
+     *
+     * @return string 
+     */
+    public function getFrNom()
+    {
+        return $this->frNom;
+    }
+
+    /**
+     * Set enNom
+     *
+     * @param string $enNom
+     * @return Categorie
+     */
+    public function setEnNom($enNom)
+    {
+        $this->enNom = $enNom;
+
+        return $this;
+    }
+
+    /**
+     * Get enNom
+     *
+     * @return string 
+     */
+    public function getEnNom()
+    {
+        return $this->enNom;
     }
 }

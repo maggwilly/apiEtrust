@@ -41,7 +41,12 @@ class Livraison implements InfoInterface
      * @ORM\Column(name="support", type="string", length=255, nullable=true)
      */
     private $support='vendeur';
-
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
+     */
+    private $defined=false;
     /**
      * @var bool
      *
@@ -69,21 +74,18 @@ class Livraison implements InfoInterface
      * @ORM\Column(name="en_magazin", type="boolean", nullable=true)
      */
     private $enMagazin=true;
-
-    /**
+     /**
      * @var bool
      *
-     * @ORM\Column(name="virified", type="boolean", nullable=true)
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
      */
-    private $virified=false;
+    private $fournie=false;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified_at", type="datetime", nullable=true)
-     */
-    private $virifiedAt;
-
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
     /**
      * Get id
      *
@@ -334,5 +336,97 @@ class Livraison implements InfoInterface
     public function getToutLePays()
     {
         return $this->toutLePays;
+    }
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Livraison
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Livraison
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Livraison
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Livraison
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

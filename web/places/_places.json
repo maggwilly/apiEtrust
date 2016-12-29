@@ -1,0 +1,30 @@
+{
+"pays":[
+   {"code":"cm", "nom":"Cameroun","initial":"237"},
+   {"code":"ng", "nom":"Nigeria","initial":"237"},
+   {"code":"rdc", "nom":"R D congo","initial":"237"}
+],
+
+"devises":[
+   {"code":"FCFA","nom":"Franc CFA" },
+   {"code":"EURO","nom":"Euro"},
+   {"code":"USD","nom":"Dollars usd"},
+   {"code":"$","nom":"Dollars"}
+],
+
+"provenances":[
+   {"code":"afrique","nom":"Produits d'Afrique"},
+   {"code":"afrique ouest","nom":"Produit d'Afrique de l'ouest"},
+   {"code":"cameroun","nom":"Produit au cameroun"},
+   {"code":"cote ivoire","nom":"Produit en Côte d'Ivoire"},
+   {"code":"afrique nord","nom":"Produit d'Afrique du nord"},
+   {"code":"europe","nom":"Importés d'Europe"},
+   {"code":"chine","nom":"Importés de chine"},
+   {"code":"dubai","nom":"Importés de Dubaï"},
+   {"code":"local","nom":"Produits locaux"},
+   {"code":"asi central","nom":"Importés d'Asi central"},
+   {"code":"afrique central","nom":"Produits d'Afrique central"},
+   {"code":"amerique nord","nom":"Importés d'Amerique du nord"}
+]
+
+}

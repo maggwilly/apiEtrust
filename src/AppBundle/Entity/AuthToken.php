@@ -35,6 +35,7 @@ class AuthToken
     protected $user;
 
 
+
     public function getId()
     {
         return $this->id;
@@ -73,5 +74,15 @@ class AuthToken
     public function setUser(User $user)
     {
         $this->user = $user;
+    }
+
+  static function create(User $user)
+    {   
+        $authToken = new AuthToken();
+        $str = uniqid();
+        $authToken->setValue(md5($str));
+        $authToken->setCreatedAt(new \DateTime('now'));
+        $authToken->setUser($user);
+        return  $authToken;
     }
 }

@@ -1,0 +1,16 @@
+{"texts":[
+  {"titre":"titre text",
+    "descriptionText":"description text"
+  }
+ ],
+  "videos":[
+    {"titre":"titre video 1",
+     "description":"description",
+     "lien":"youtube link"
+   },
+    {"titre":"titre video 1",
+     "description":"description",
+     "lien":"youtube link"
+   }
+  ]
+}

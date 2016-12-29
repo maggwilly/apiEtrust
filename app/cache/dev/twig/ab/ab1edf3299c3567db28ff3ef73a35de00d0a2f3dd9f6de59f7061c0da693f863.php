@@ -21,20 +21,20 @@ class __TwigTemplate_1cfee4b491f22ddd076e14a75676fcbf05f48af190e97ce3a1f2fa50dab
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4b7e30b88f2891150ff45bf3f3f78c63021123c1855b0c4c14bf4021c52688b6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4b7e30b88f2891150ff45bf3f3f78c63021123c1855b0c4c14bf4021c52688b6->enter($__internal_4b7e30b88f2891150ff45bf3f3f78c63021123c1855b0c4c14bf4021c52688b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:PointVente:show.html.twig"));
+        $__internal_ea72dd4c6315839c28ca88fd9ebb0cc97b85bd4c7ddcbe914a2d914de8240770 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ea72dd4c6315839c28ca88fd9ebb0cc97b85bd4c7ddcbe914a2d914de8240770->enter($__internal_ea72dd4c6315839c28ca88fd9ebb0cc97b85bd4c7ddcbe914a2d914de8240770_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AppBundle:PointVente:show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_4b7e30b88f2891150ff45bf3f3f78c63021123c1855b0c4c14bf4021c52688b6->leave($__internal_4b7e30b88f2891150ff45bf3f3f78c63021123c1855b0c4c14bf4021c52688b6_prof);
+        $__internal_ea72dd4c6315839c28ca88fd9ebb0cc97b85bd4c7ddcbe914a2d914de8240770->leave($__internal_ea72dd4c6315839c28ca88fd9ebb0cc97b85bd4c7ddcbe914a2d914de8240770_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_668eea897b4c651b1ed9d1a238847d9b1d99440f0476c1a7b4dbea53e0f6f392 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_668eea897b4c651b1ed9d1a238847d9b1d99440f0476c1a7b4dbea53e0f6f392->enter($__internal_668eea897b4c651b1ed9d1a238847d9b1d99440f0476c1a7b4dbea53e0f6f392_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e688f9e2b07c84c143e97bf1f346ba69176b639a2511a9c656bef5559bb3aeb7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e688f9e2b07c84c143e97bf1f346ba69176b639a2511a9c656bef5559bb3aeb7->enter($__internal_e688f9e2b07c84c143e97bf1f346ba69176b639a2511a9c656bef5559bb3aeb7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<h1>PointVente</h1>
@@ -110,7 +110,7 @@ class __TwigTemplate_1cfee4b491f22ddd076e14a75676fcbf05f48af190e97ce3a1f2fa50dab
 </ul>
 ";
         
-        $__internal_668eea897b4c651b1ed9d1a238847d9b1d99440f0476c1a7b4dbea53e0f6f392->leave($__internal_668eea897b4c651b1ed9d1a238847d9b1d99440f0476c1a7b4dbea53e0f6f392_prof);
+        $__internal_e688f9e2b07c84c143e97bf1f346ba69176b639a2511a9c656bef5559bb3aeb7->leave($__internal_e688f9e2b07c84c143e97bf1f346ba69176b639a2511a9c656bef5559bb3aeb7_prof);
 
     }
 

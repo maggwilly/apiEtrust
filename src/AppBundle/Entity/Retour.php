@@ -45,7 +45,12 @@ class Retour implements InfoInterface
      * @ORM\Column(name="delais", type="integer")
      */
     private $delais=10;
-
+     /**
+     * @var bool
+     *
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
+     */
+    private $fournie=false;
     /**
      * @var string
      *
@@ -53,20 +58,28 @@ class Retour implements InfoInterface
      */
     private $conditions;
 
-    /**
-     * @var bool
+        /**
+     * @var string
      *
-     * @ORM\Column(name="virified", type="boolean",nullable=true)
+     * @ORM\Column(name="litige", type="string", length=255,nullable=true)
      */
-    private $virified=false;
+    private $gestionLitige;
+
+
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="virified_at", type="datetime",nullable=true)
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
      */
-    private $virifiedAt;
+    private $defined=false;
 
+
+    /**
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
     /**
      * Get id
      *
@@ -192,51 +205,7 @@ class Retour implements InfoInterface
         return $this->conditions;
     }
 
-    /**
-     * Set virified
-     *
-     * @param boolean $virified
-     * @return Retour
-     */
-    public function setVirified($virified)
-    {
-        $this->virified = $virified;
 
-        return $this;
-    }
-
-    /**
-     * Get virified
-     *
-     * @return boolean 
-     */
-    public function getVirified()
-    {
-        return $this->virified;
-    }
-
-    /**
-     * Set virifiedAt
-     *
-     * @param \DateTime $virifiedAt
-     * @return Retour
-     */
-    public function setVirifiedAt($virifiedAt)
-    {
-        $this->virifiedAt = $virifiedAt;
-
-        return $this;
-    }
-
-    /**
-     * Get virifiedAt
-     *
-     * @return \DateTime 
-     */
-    public function getVirifiedAt()
-    {
-        return $this->virifiedAt;
-    }
 
           /**
      * Get virifiedAt
@@ -246,5 +215,120 @@ class Retour implements InfoInterface
     public function getClassType()
     {
         return RetourType::class;
+    }
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Retour
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set gestionLitige
+     *
+     * @param string $gestionLitige
+     * @return Retour
+     */
+    public function setGestionLitige($gestionLitige)
+    {
+        $this->gestionLitige = $gestionLitige;
+
+        return $this;
+    }
+
+    /**
+     * Get gestionLitige
+     *
+     * @return string 
+     */
+    public function getGestionLitige()
+    {
+        return $this->gestionLitige;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Retour
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Retour
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Retour
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

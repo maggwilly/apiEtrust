@@ -64,10 +64,10 @@ class Payement extends \AppBundle\Entity\Payement implements \Doctrine\ORM\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'orangeMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mtnMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'payementLivraison', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'moneyTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'orangeMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mtnMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'payementLivraison', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'moneyTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mobileTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'apresReception', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'fournie', 'requestForVerification');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'orangeMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mtnMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'payementLivraison', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'moneyTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'orangeMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mtnMoney', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'payementLivraison', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'moneyTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'mobileTransfert', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'apresReception', '' . "\0" . 'AppBundle\\Entity\\Payement' . "\0" . 'fournie', 'requestForVerification');
     }
 
     /**
@@ -329,6 +329,138 @@ class Payement extends \AppBundle\Entity\Payement implements \Doctrine\ORM\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPayementLivraison', array());
 
         return parent::getPayementLivraison();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setApresReception($apresReception)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setApresReception', array($apresReception));
+
+        return parent::setApresReception($apresReception);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getApresReception()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getApresReception', array());
+
+        return parent::getApresReception();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFournie($fournie)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFournie', array($fournie));
+
+        return parent::setFournie($fournie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFournie()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFournie', array());
+
+        return parent::getFournie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMobileTransfert($mobileTransfert)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMobileTransfert', array($mobileTransfert));
+
+        return parent::setMobileTransfert($mobileTransfert);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMobileTransfert()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMobileTransfert', array());
+
+        return parent::getMobileTransfert();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

@@ -1,0 +1,8 @@
+AppBundle\Entity\PayementProcess:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['payementProcess']
+        status:
+            groups: ['payementProcess','publicite','request','full' ]
+      

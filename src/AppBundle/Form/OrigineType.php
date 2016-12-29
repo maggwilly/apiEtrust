@@ -14,14 +14,19 @@ class OrigineType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('origine')
         ->add('provenance')
         ->add('qualite')
+        ->add('defined')
         ->add('typeVente')
         ->add('grossiste')
+        ->add('moq')
+        ->add('devise')
         ->add('details')
-        ->add('origine')
+        ->add('garenti')
+        ->add('dureeGarenti')
         ->add('surCommande')
-        ->add('garenti');
+        ->add('fournie');
     }
     
     /**

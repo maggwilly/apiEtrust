@@ -16,10 +16,21 @@ AppBundle\Entity\Origine:
         details:
             groups: ['origine','full'  ]  
         surCommande:
-            groups: ['origine','full'  ]              
-        garenti:
+            groups: ['origine','full'  ]      
+        devise:
+            groups: ['origine','full'  ]  
+        sexeAge:
+            groups: ['origine','full'  ]      
+        moq:
             groups: ['origine','full'  ]                        
-        virified:
+        garenti:
+            groups: ['origine','full'  ]   
+        dureeGarenti:
+            groups: ['origine','full'  ]                       
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]   
+        fournie:
+            groups: ['full'  ]  
+        requestForVerification:
+            groups: ['origine' , 'full' ]          
+  

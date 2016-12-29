@@ -10,9 +10,10 @@ AppBundle\Entity\Payement:
         payementLivraison:
             groups: ['payement','full' ] 
         moneyTransfert:
-            groups: ['payement','full'  ]  
-        virified:
+            groups: ['payement','full'  ]    
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]   
-                       
+        fournie:
+            groups: ['full'  ]    
+        requestForVerification:
+            groups: ['payement' , 'full' ]                    

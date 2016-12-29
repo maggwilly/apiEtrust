@@ -9,12 +9,24 @@ AppBundle\Entity\Produit:
             groups: ['produit','full' ] 
         description:
             groups: ['produit','full' ] 
+        image:
+            groups: ['produit','full']      
+        descriptionLieu:
+            groups: ['full' ] 
+        lieu:
+            groups: ['full' ]  
+        lat:
+            groups: ['full' ] 
+        lon:
+            groups: ['full' ] 
+        utilDate:
+            groups: ['full' ] 
+        utilTime:
+            groups: ['full' ]                                    
         prix:
             groups: ['produit' ,'full']  
         prixDiscutable:
             groups: ['produit' ,'full']     
-        moq:
-            groups: ['produit' ,'full']  
         origine:
             groups: ['produit' ,'full']  
         livraison:
@@ -22,4 +34,6 @@ AppBundle\Entity\Produit:
         payement:
             groups: ['produit' ,'full']  
         retour:
-                       
+            groups: ['produit' ,'full']  
+        publicites:
+            groups: ['full']             

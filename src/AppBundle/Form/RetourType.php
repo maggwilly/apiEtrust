@@ -13,7 +13,15 @@ class RetourType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('support')->add('remboursement')->add('moyens')->add('delais')->add('conditions') ;
+        $builder
+        ->add('support')
+        ->add('remboursement')
+        ->add('moyens')
+        ->add('delais')
+        ->add('fournie')
+        ->add('conditions')
+        ->add('gestionLitige')
+        ->add('defined')      ;
     }
     
     /**

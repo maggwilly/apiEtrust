@@ -64,10 +64,10 @@ class Localisation extends \AppBundle\Entity\Localisation implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lat', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lon', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lieu', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lat', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lon', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lieu', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'verificationRequestedAt', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'fournie', 'requestForVerification');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lat', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lon', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lieu', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lat', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lon', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'lieu', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'verificationRequestedAt', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'description', '' . "\0" . 'AppBundle\\Entity\\Localisation' . "\0" . 'fournie', 'requestForVerification');
     }
 
     /**
@@ -373,6 +373,94 @@ class Localisation extends \AppBundle\Entity\Localisation implements \Doctrine\O
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClassType', array());
 
         return parent::getClassType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFournie($fournie)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFournie', array($fournie));
+
+        return parent::setFournie($fournie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFournie()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFournie', array());
+
+        return parent::getFournie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

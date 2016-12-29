@@ -1,0 +1,20 @@
+AppBundle\Entity\Request:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['request','full' ]
+        fistrequestDate:
+            groups: ['request','full' ]
+        requestDate:
+            groups: ['request','full'  ]
+        status:
+            groups: ['request','full' ]
+        statusChangeDate:
+            groups: ['request','full' ]
+        raison:
+            groups: ['request','full' ]
+        acceptedUntilDate:
+            groups: ['full' ] 
+        payementProcess:
+            groups: ['full'  ] 
+  

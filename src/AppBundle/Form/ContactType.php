@@ -16,8 +16,10 @@ class ContactType extends AbstractType
         $builder
         ->add('telephone')
         ->add('email')
+        ->add('defined')
         ->add('whatsapp')
-        ->add('fecebook')  ;
+        ->add('fecebook')
+        ->add('site');
     }
     
     /**

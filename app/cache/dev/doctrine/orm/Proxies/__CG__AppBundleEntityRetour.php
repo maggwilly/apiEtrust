@@ -64,10 +64,10 @@ class Retour extends \AppBundle\Entity\Retour implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'support', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'remboursement', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'moyens', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'delais', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'conditions', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'support', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'remboursement', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'moyens', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'delais', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'fournie', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'conditions', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'gestionLitige', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'defined', 'requestForVerification');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'support', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'remboursement', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'moyens', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'delais', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'conditions', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'support', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'remboursement', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'moyens', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'delais', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'fournie', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'conditions', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'gestionLitige', '' . "\0" . 'AppBundle\\Entity\\Retour' . "\0" . 'defined', 'requestForVerification');
     }
 
     /**
@@ -301,56 +301,122 @@ class Retour extends \AppBundle\Entity\Retour implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setVirified($virified)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVirified', array($virified));
-
-        return parent::setVirified($virified);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getVirified()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVirified', array());
-
-        return parent::getVirified();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setVirifiedAt($virifiedAt)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVirifiedAt', array($virifiedAt));
-
-        return parent::setVirifiedAt($virifiedAt);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getVirifiedAt()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVirifiedAt', array());
-
-        return parent::getVirifiedAt();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getClassType()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClassType', array());
 
         return parent::getClassType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFournie($fournie)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFournie', array($fournie));
+
+        return parent::setFournie($fournie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFournie()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFournie', array());
+
+        return parent::getFournie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setGestionLitige($gestionLitige)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setGestionLitige', array($gestionLitige));
+
+        return parent::setGestionLitige($gestionLitige);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getGestionLitige()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getGestionLitige', array());
+
+        return parent::getGestionLitige();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

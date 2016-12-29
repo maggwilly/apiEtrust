@@ -64,10 +64,10 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'uniqueid', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', 'password', 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'enabled', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'credentialsNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonLocked', 'fiscalite', 'localisation', 'representation', 'contact', 'origine', 'livraison', 'payement', 'retour', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'certified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'certifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'uniqueid', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'telephone', 'langue', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', 'password', 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'enabled', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'credentialsNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonLocked', 'fiscalite', 'localisation', 'representation', 'contact', 'origine', 'requestForVerification', 'livraison', 'elements', 'payement', 'retour', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'imageFile', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'uniqueid', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', 'password', 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'enabled', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'credentialsNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonLocked', 'fiscalite', 'localisation', 'representation', 'contact', 'origine', 'livraison', 'payement', 'retour', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'certified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'certifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'uniqueid', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'telephone', 'langue', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'email', 'password', 'plainPassword', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'enabled', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'credentialsNonExpired', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'accountNonLocked', 'fiscalite', 'localisation', 'representation', 'contact', 'origine', 'requestForVerification', 'livraison', 'elements', 'payement', 'retour', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'virifiedAt', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'imageFile', '' . "\0" . 'AppBundle\\Entity\\User' . "\0" . 'roles');
     }
 
     /**
@@ -173,6 +173,50 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function setImageFile($file)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', array($file));
+
+        return parent::setImageFile($file);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageFile()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', array());
+
+        return parent::getImageFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage(\AppBundle\Entity\Image $image = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', array($image));
+
+        return parent::setImage($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', array());
+
+        return parent::getImage();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -676,50 +720,6 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setCertified($certified)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCertified', array($certified));
-
-        return parent::setCertified($certified);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCertified()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCertified', array());
-
-        return parent::getCertified();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setCertifiedAt($certifiedAt)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCertifiedAt', array($certifiedAt));
-
-        return parent::setCertifiedAt($certifiedAt);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCertifiedAt()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCertifiedAt', array());
-
-        return parent::getCertifiedAt();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setCreatedAt($ceatedAt)
     {
 
@@ -737,6 +737,83 @@ class User extends \AppBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreatedAt', array());
 
         return parent::getCreatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLangue($langue)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLangue', array($langue));
+
+        return parent::setLangue($langue);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLangue()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLangue', array());
+
+        return parent::getLangue();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addElement(\AppBundle\Entity\Element $elements)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addElement', array($elements));
+
+        return parent::addElement($elements);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeElement(\AppBundle\Entity\Element $elements)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeElement', array($elements));
+
+        return parent::removeElement($elements);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getElements()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getElements', array());
+
+        return parent::getElements();
     }
 
 }

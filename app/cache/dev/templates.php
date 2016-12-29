@@ -150,4 +150,8 @@
   ':livraison:index.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/livraison/index.html.twig',
   ':livraison:new.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/livraison/new.html.twig',
   ':livraison:show.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/livraison/show.html.twig',
+  ':publicite:edit.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/publicite/edit.html.twig',
+  ':publicite:index.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/publicite/index.html.twig',
+  ':publicite:new.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/publicite/new.html.twig',
+  ':publicite:show.html.twig' => 'C:\\Users\\PLATA-PC\\workspace\\apiEtrust\\app/Resources\\views/publicite/show.html.twig',
 );

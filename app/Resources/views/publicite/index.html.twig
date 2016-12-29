@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Publicites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Startdate</th>
+                <th>Starttime</th>
+                <th>Duree</th>
+                <th>Plateforme</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Sexe</th>
+                <th>Age</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for publicite in publicites %}
+            <tr>
+                <td><a href="{{ path('publicite_show', { 'id': publicite.id }) }}">{{ publicite.id }}</a></td>
+                <td>{% if publicite.startDate %}{{ publicite.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if publicite.startTime %}{{ publicite.startTime|date('H:i:s') }}{% endif %}</td>
+                <td>{{ publicite.duree }}</td>
+                <td>{{ publicite.plateforme }}</td>
+                <td>{{ publicite.pays }}</td>
+                <td>{{ publicite.ville }}</td>
+                <td>{{ publicite.sexe }}</td>
+                <td>{{ publicite.age }}</td>
+                <td>{{ publicite.status }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('publicite_show', { 'id': publicite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('publicite_edit', { 'id': publicite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('publicite_new') }}">Create a new publicite</a>
+        </li>
+    </ul>
+{% endblock %}

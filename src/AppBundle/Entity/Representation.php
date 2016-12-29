@@ -41,7 +41,12 @@ class Representation implements InfoInterface
      * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
      */
     private $prenom;
-
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
+     */
+    private $defined=false;
     /**
      * @var string
      *
@@ -101,7 +106,12 @@ class Representation implements InfoInterface
      * @ORM\Column(name="document", type="string", length=255, nullable=true, nullable=true)
      */
     private $document;
-
+     /**
+     * @var bool
+     *
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
+     */
+    private $fournie=false;
     /**
      * @var string
      *
@@ -112,23 +122,15 @@ class Representation implements InfoInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="expireDate", type="date", length=255, nullable=true)
+     * @ORM\Column(name="expireDate", type="date",nullable=true)
      */
     private $expireDate;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified", type="boolean", nullable=true)
-     */
-    private $virified=false;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified_at", type="datetime", nullable=true)
-     */
-    private $virifiedAt;
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
 
 
     public function __construct(
@@ -525,5 +527,97 @@ class Representation implements InfoInterface
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Representation
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Representation
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Representation
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Representation
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

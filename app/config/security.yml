@@ -18,7 +18,7 @@ security:
             stateless: true
         public:
       # since anonymous is allowed users will not be forced to login
-            pattern:   auth-token|register
+            pattern:   auth-token|register|(abaout|help|cgu|locals|utils|/)$
             anonymous: true
             security: false
             stateless: true

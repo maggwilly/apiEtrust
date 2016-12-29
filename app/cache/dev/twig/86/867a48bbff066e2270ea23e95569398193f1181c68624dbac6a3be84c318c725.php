@@ -21,20 +21,20 @@ class __TwigTemplate_1f248c75701622528166afa5bd1f93d2302c377373cf565e934468035e8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3c5a52c4c8a7cc9a540fea6b0a22979f2b3eba2e5df5e831f44abb37161592bb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3c5a52c4c8a7cc9a540fea6b0a22979f2b3eba2e5df5e831f44abb37161592bb->enter($__internal_3c5a52c4c8a7cc9a540fea6b0a22979f2b3eba2e5df5e831f44abb37161592bb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@App/CommandeClient/new.html.twig"));
+        $__internal_ff41a84bf401f782bb8cb1a4b62ee5a91c2d7e473a61b5379134a87be7bd169c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ff41a84bf401f782bb8cb1a4b62ee5a91c2d7e473a61b5379134a87be7bd169c->enter($__internal_ff41a84bf401f782bb8cb1a4b62ee5a91c2d7e473a61b5379134a87be7bd169c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@App/CommandeClient/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3c5a52c4c8a7cc9a540fea6b0a22979f2b3eba2e5df5e831f44abb37161592bb->leave($__internal_3c5a52c4c8a7cc9a540fea6b0a22979f2b3eba2e5df5e831f44abb37161592bb_prof);
+        $__internal_ff41a84bf401f782bb8cb1a4b62ee5a91c2d7e473a61b5379134a87be7bd169c->leave($__internal_ff41a84bf401f782bb8cb1a4b62ee5a91c2d7e473a61b5379134a87be7bd169c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_81766cd1eded375b5a7b647ee65967290d2d07eb9c06a5e8e38c19106b92a68d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_81766cd1eded375b5a7b647ee65967290d2d07eb9c06a5e8e38c19106b92a68d->enter($__internal_81766cd1eded375b5a7b647ee65967290d2d07eb9c06a5e8e38c19106b92a68d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1ad4d9add4ce260a6798fac6bc77487eea7182d2db701bc8a3e6325dc2fa9f19 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1ad4d9add4ce260a6798fac6bc77487eea7182d2db701bc8a3e6325dc2fa9f19->enter($__internal_1ad4d9add4ce260a6798fac6bc77487eea7182d2db701bc8a3e6325dc2fa9f19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<h1>CommandeClient creation</h1>
@@ -56,7 +56,7 @@ class __TwigTemplate_1f248c75701622528166afa5bd1f93d2302c377373cf565e934468035e8
 </ul>
 ";
         
-        $__internal_81766cd1eded375b5a7b647ee65967290d2d07eb9c06a5e8e38c19106b92a68d->leave($__internal_81766cd1eded375b5a7b647ee65967290d2d07eb9c06a5e8e38c19106b92a68d_prof);
+        $__internal_1ad4d9add4ce260a6798fac6bc77487eea7182d2db701bc8a3e6325dc2fa9f19->leave($__internal_1ad4d9add4ce260a6798fac6bc77487eea7182d2db701bc8a3e6325dc2fa9f19_prof);
 
     }
 

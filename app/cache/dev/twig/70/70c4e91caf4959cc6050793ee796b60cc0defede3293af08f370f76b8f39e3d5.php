@@ -22,20 +22,20 @@ class __TwigTemplate_223b4df83d80ca71845e0b070e60fce3a17ddd298845a3ae5231e41f880
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3c60cfef2758c25e106324385fcd6c8c864a2fdacbce0a0d70acaec9392cb2fe = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3c60cfef2758c25e106324385fcd6c8c864a2fdacbce0a0d70acaec9392cb2fe->enter($__internal_3c60cfef2758c25e106324385fcd6c8c864a2fdacbce0a0d70acaec9392cb2fe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":default:index.html.twig"));
+        $__internal_0894b8441d479922fbb1fb08a0d6e918a8d497574eb5747dedd7e508767c8180 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0894b8441d479922fbb1fb08a0d6e918a8d497574eb5747dedd7e508767c8180->enter($__internal_0894b8441d479922fbb1fb08a0d6e918a8d497574eb5747dedd7e508767c8180_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3c60cfef2758c25e106324385fcd6c8c864a2fdacbce0a0d70acaec9392cb2fe->leave($__internal_3c60cfef2758c25e106324385fcd6c8c864a2fdacbce0a0d70acaec9392cb2fe_prof);
+        $__internal_0894b8441d479922fbb1fb08a0d6e918a8d497574eb5747dedd7e508767c8180->leave($__internal_0894b8441d479922fbb1fb08a0d6e918a8d497574eb5747dedd7e508767c8180_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_c1360a5fec3f6345d18e965c747755d5ce669fc05a4d1cf72a296499f0fc803a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c1360a5fec3f6345d18e965c747755d5ce669fc05a4d1cf72a296499f0fc803a->enter($__internal_c1360a5fec3f6345d18e965c747755d5ce669fc05a4d1cf72a296499f0fc803a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_80e814111ca55d4bf72b501d4b97708e82233d8085952f2ff3de83929c991280 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_80e814111ca55d4bf72b501d4b97708e82233d8085952f2ff3de83929c991280->enter($__internal_80e814111ca55d4bf72b501d4b97708e82233d8085952f2ff3de83929c991280_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div id=\"wrapper\">
@@ -57,52 +57,31 @@ class __TwigTemplate_223b4df83d80ca71845e0b070e60fce3a17ddd298845a3ae5231e41f880
         echo twig_escape_filter($this->env, (isset($context["base_dir"]) ? $context["base_dir"] : $this->getContext($context, "base_dir")), "html", null, true);
         echo "</code>
                 </p>
+
+<img src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("read/apple-touch-icon.png"), "html", null, true);
+        echo "\" alt=\"hhh\" />
+
             </div>
 
-            <div id=\"next\">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id=\"icon-book\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"-12.5 9 64 64\" enable-background=\"new -12.5 9 64 64\" xml:space=\"preserve\">
-                        <path fill=\"#AAA\" d=\"M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z\"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href=\"http://symfony.com/doc/";
-        // line 39
-        echo twig_escape_filter($this->env, twig_slice($this->env, twig_constant("Symfony\\Component\\HttpKernel\\Kernel::VERSION"), 0, 3), "html", null, true);
-        echo "/book/page_creation.html\">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
+<div class=\"fb-comments\" data-href=\"https://mail.google.com/mail/u/0/#inbox/158f9c0da01d5123\" data-numposts=\"5\"></div>
 
         </div>
     </div>
 ";
         
-        $__internal_c1360a5fec3f6345d18e965c747755d5ce669fc05a4d1cf72a296499f0fc803a->leave($__internal_c1360a5fec3f6345d18e965c747755d5ce669fc05a4d1cf72a296499f0fc803a_prof);
+        $__internal_80e814111ca55d4bf72b501d4b97708e82233d8085952f2ff3de83929c991280->leave($__internal_80e814111ca55d4bf72b501d4b97708e82233d8085952f2ff3de83929c991280_prof);
 
     }
 
-    // line 49
+    // line 28
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_2c511a7df322e1316a68d9cabd6fb086c90cd554046fe6fda3001a24bf2e5202 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2c511a7df322e1316a68d9cabd6fb086c90cd554046fe6fda3001a24bf2e5202->enter($__internal_2c511a7df322e1316a68d9cabd6fb086c90cd554046fe6fda3001a24bf2e5202_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_c23c75e612bfff6494d2dea7bb85f782c2aa0a3456c603b59405da80fcc64058 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c23c75e612bfff6494d2dea7bb85f782c2aa0a3456c603b59405da80fcc64058->enter($__internal_c23c75e612bfff6494d2dea7bb85f782c2aa0a3456c603b59405da80fcc64058_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 50
+        // line 29
         echo "<style>
     body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
     h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
@@ -131,7 +110,7 @@ class __TwigTemplate_223b4df83d80ca71845e0b070e60fce3a17ddd298845a3ae5231e41f880
 </style>
 ";
         
-        $__internal_2c511a7df322e1316a68d9cabd6fb086c90cd554046fe6fda3001a24bf2e5202->leave($__internal_2c511a7df322e1316a68d9cabd6fb086c90cd554046fe6fda3001a24bf2e5202_prof);
+        $__internal_c23c75e612bfff6494d2dea7bb85f782c2aa0a3456c603b59405da80fcc64058->leave($__internal_c23c75e612bfff6494d2dea7bb85f782c2aa0a3456c603b59405da80fcc64058_prof);
 
     }
 
@@ -147,7 +126,7 @@ class __TwigTemplate_223b4df83d80ca71845e0b070e60fce3a17ddd298845a3ae5231e41f880
 
     public function getDebugInfo()
     {
-        return array (  106 => 50,  100 => 49,  84 => 39,  57 => 15,  46 => 7,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  85 => 29,  79 => 28,  63 => 18,  57 => 15,  46 => 7,  41 => 4,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -176,33 +155,12 @@ class __TwigTemplate_223b4df83d80ca71845e0b070e60fce3a17ddd298845a3ae5231e41f880
                     Your application is now ready. You can start working on it at:
                     <code>{{ base_dir }}</code>
                 </p>
+
+<img src=\"{{ asset(\"read/apple-touch-icon.png\")}}\" alt=\"hhh\" />
+
             </div>
 
-            <div id=\"next\">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id=\"icon-book\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"-12.5 9 64 64\" enable-background=\"new -12.5 9 64 64\" xml:space=\"preserve\">
-                        <path fill=\"#AAA\" d=\"M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z\"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href=\"http://symfony.com/doc/{{ constant('Symfony\\\\Component\\\\HttpKernel\\\\Kernel::VERSION')[:3] }}/book/page_creation.html\">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
+<div class=\"fb-comments\" data-href=\"https://mail.google.com/mail/u/0/#inbox/158f9c0da01d5123\" data-numposts=\"5\"></div>
 
         </div>
     </div>

@@ -10,11 +10,12 @@ AppBundle\Entity\Retour:
         moyens:
             groups: ['retour','full' ] 
         delais:
-            groups: ['retour','full'  ]  
+            groups: ['retour','full' ]  
         conditions:
             groups: ['retour','full' ]  
-        virified:
-            groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]   
-                       
+        defined:
+            groups: ['full'] 
+        fournie:
+            groups: ['full']
+        requestForVerification:
+            groups: ['retour' , 'full' ]                          

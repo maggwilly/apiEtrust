@@ -1,0 +1,24 @@
+publicite_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Publicite:index" }
+    methods:  GET
+
+publicite_show:
+    path:     /show
+    defaults: { _controller: "AppBundle:Publicite:show" }
+    methods:  GET
+
+publicite_new:
+    path:     /create
+    defaults: { _controller: "AppBundle:Publicite:create" }
+    methods:  [GET, POST]
+
+publicite_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Publicite:update" }
+    methods:  [GET, POST]
+
+publicite_delete:
+    path:     /delete
+    defaults: { _controller: "AppBundle:Publicite:delete" }
+    methods:  [DELETE,GET]

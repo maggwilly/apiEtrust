@@ -17,10 +17,12 @@ class LivraisonType extends AbstractType
         ->add('internationnal')
         ->add('delais')
         ->add('support')
-        ->add('enMagazin')
-        ->add('toutLePays')
+        ->add('defined')
         ->add('expedition')
-        ->add('domicile')    ;
+        ->add('domicile')
+        ->add('toutLePays')
+        ->add('enMagazin')
+        ->add('fournie');
     }
     
     /**
@@ -29,8 +31,7 @@ class LivraisonType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Livraison',
-            'csrf_protection' => false
+            'data_class' => 'AppBundle\Entity\Livraison','csrf_protection' => false
         ));
     }
 

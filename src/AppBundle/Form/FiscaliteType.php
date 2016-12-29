@@ -16,10 +16,13 @@ class FiscaliteType extends AbstractType
         $builder
         ->add('nomJuridique')
         ->add('registre')
+        ->add('defined')
+        ->add('pays')
         ->add('contribuable')
         ->add('categorie')
         ->add('regime')
-        ->add('conforme');
+        ->add('conforme')
+        ->add('fournie');
     }
     
     /**

@@ -34,6 +34,18 @@ class Fiscalite implements InfoInterface
      * @ORM\Column(name="registre", type="string", length=255, nullable=true)
      */
     private $registre;
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
+     */
+    private $defined=false;
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="pays", type="string", length=255, nullable=true)
+     */
+    private $pays;
 
     /**
      * @var string
@@ -63,20 +75,18 @@ class Fiscalite implements InfoInterface
      */
     private $conforme=true;
 
-    /**
+	 /**
      * @var bool
      *
-     * @ORM\Column(name="virified", type="boolean",nullable=true)
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
      */
-    private $virified=false;
+    private $fournie=false;
+
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified_at", type="datetime", nullable=true)
-     */
-    private $virifiedAt;
-
-
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
     /**
      * Get id
      *
@@ -279,5 +289,120 @@ class Fiscalite implements InfoInterface
     public function getClassType()
     {
         return FiscaliteType::class;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Fiscalite
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     * @return Fiscalite
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string 
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Fiscalite
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Fiscalite
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Fiscalite
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

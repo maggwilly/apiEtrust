@@ -15,7 +15,9 @@ AppBundle\Entity\Fiscalite:
             groups: ['fiscalite','full'  ]
         conforme:
             groups: ['fiscalite','full'  ] 
-        virified:
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]                                             
+        fournie:
+            groups: ['full'  ]      
+        requestForVerification:
+            groups: ['fiscalite' , 'full' ]

@@ -39,7 +39,7 @@ class ManageController extends Controller
 
     /**
      * Edits an existing Produit entity.
-     *@Rest\View(serializerGroups={"full"})
+      *@Rest\View(serializerGroups={"full"})
      */
     public function showAction(Request $request)
     {
@@ -66,9 +66,10 @@ class ManageController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find entity.');
         }
+        $entity->setVerificationRequestedAt(new \DateTime());
         $form = $this->createCreateForm($entity);
         $form->submit($request->request->all(), false); // Validation des données
-
+       //create element
         if ($form->isValid()) {
             $em->flush();
 

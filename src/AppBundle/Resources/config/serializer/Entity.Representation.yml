@@ -26,10 +26,10 @@ AppBundle\Entity\Representation:
         numeroDoc:
             groups: ['representation','full' ] 
         expireDate:
-            groups: ['representation','full'  ]  
-        virified:
+            groups: ['representation','full'  ] 
+        requestForVerification:
+            groups: ['representation' , 'full' ]                                                             
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]   
-
-                       
+        fournie:
+            groups: ['full'  ]                          

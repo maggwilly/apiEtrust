@@ -17,7 +17,10 @@ AppBundle\Entity\Livraison:
             groups: ['livraison','full'  ] 
         toutLePays:
             groups: ['livraison','full'  ] 
-        virified:
+        defined:
             groups: ['full'  ] 
-        virifiedAt:
-            groups: ['full'  ]                                             
+ 
+        fournie:
+            groups: ['full'  ] 
+        requestForVerification:
+            groups: ['livraison', 'full' ]                                               

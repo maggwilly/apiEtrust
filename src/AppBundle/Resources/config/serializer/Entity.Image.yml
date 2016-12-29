@@ -1,0 +1,8 @@
+AppBundle\Entity\Image:
+    exclusion_policy: none
+    properties:
+        url:
+          groups: ['produit','user','full' ]
+        alt:
+          groups: ['produit','user','full' ]
+           

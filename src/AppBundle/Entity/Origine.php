@@ -41,6 +41,13 @@ class Origine implements InfoInterface
      */
     private $qualite;
 
+       /**
+     * @var bool
+     *
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
+     */
+    private $defined=false;
+
     /**
      * @var string
      *
@@ -55,6 +62,18 @@ class Origine implements InfoInterface
      */
     private $grossiste=true;
 
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="moq", type="string", length=255,nullable=true)
+     */
+    private $moq=1;
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="devise", type="string", length=255, nullable=true)
+     */
+     private $devise;
     /**
      * @var bool
      *
@@ -69,28 +88,49 @@ class Origine implements InfoInterface
      */
     private $garenti=false;
 
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="dureeGarenti", type="string", length=255,nullable=true)
+     */
+    private $dureeGarenti=1;
+
     /**
      * @var boolean
      *
      * @ORM\Column(name="sur_commande", type="boolean", nullable=true)
      */
     private $surCommande;
-
+     /**
+     * @var bool
+     *
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
+     */
+    private $fournie=false;
     /**
      * @var bool
      *
      * @ORM\Column(name="virified", type="boolean",nullable=true)
      */
-    private $virified=false;
-
     /**
-     * @var bool
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
+
+        /**
+     * @var string
      *
-     * @ORM\Column(name="virified_at", type="datetime", nullable=true)
+     * @ORM\Column(name="sexe_age", type="string", length=255,nullable=true)
      */
-    private $virifiedAt;
-
-
+    private $sexeAge;
+     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->devise="Fcfa";       
+    }
     
     /**
      * Get id
@@ -193,6 +233,29 @@ class Origine implements InfoInterface
     {
         return $this->grossiste;
     }
+    /**
+     * Set moq
+     *
+     * @param string $moq
+     * @return Produit
+     */
+    public function setMoq($moq)
+    {
+        $this->moq = $moq;
+
+        return $this;
+    }
+
+    /**
+     * Get moq
+     *
+     * @return string 
+     */
+    public function getMoq()
+    {
+        return $this->moq;
+    }
+
 
     /**
      * Set details
@@ -340,5 +403,168 @@ class Origine implements InfoInterface
     public function getSurCommande()
     {
         return $this->surCommande;
+    }
+
+
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Origine
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Origine
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set devise
+     *
+     * @param string $devise
+     * @return Origine
+     */
+    public function setDevise($devise)
+    {
+        $this->devise = $devise;
+
+        return $this;
+    }
+
+    /**
+     * Get devise
+     *
+     * @return string 
+     */
+    public function getDevise()
+    {
+        return $this->devise;
+    }
+
+    /**
+     * Set dureeGarenti
+     *
+     * @param string $dureeGarenti
+     * @return Origine
+     */
+    public function setDureeGarenti($dureeGarenti)
+    {
+        $this->dureeGarenti = $dureeGarenti;
+
+        return $this;
+    }
+
+    /**
+     * Get dureeGarenti
+     *
+     * @return string 
+     */
+    public function getDureeGarenti()
+    {
+        return $this->dureeGarenti;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Origine
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+        /**
+     * Set sexe
+     *
+     * @param string $sexe
+     * @return Publicite
+     */
+    public function setSexeAge($sexe)
+    {
+        $this->sexeAge = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return string 
+     */
+    public function getSexeAge()
+    {
+        return $this->sexeAge;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Origine
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

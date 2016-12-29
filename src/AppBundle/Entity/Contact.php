@@ -33,7 +33,12 @@ class Contact implements InfoInterface
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
      */
     private $email;
-
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
+     */
+    private $defined=false;
     /**
      * @var string
      *
@@ -48,18 +53,16 @@ class Contact implements InfoInterface
     private $fecebook;
 
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified", type="boolean",nullable=true)
+     * @var string
+     * @ORM\Column(name="site", type="string", length=255, nullable=true)
      */
-    private $virified=false;
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="virified_at", type="datetime",nullable=true)
-     */
-    private $virifiedAt;
+    private $site;
 
+    /**
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
 
 
     public function __construct(
@@ -224,5 +227,97 @@ class Contact implements InfoInterface
     public function getClassType()
     {
         return ContactType::class;
+    }
+
+    /**
+     * Set site
+     *
+     * @param string $site
+     * @return Contact
+     */
+    public function setSite($site)
+    {
+        $this->site = $site;
+
+        return $this;
+    }
+
+    /**
+     * Get site
+     *
+     * @return string 
+     */
+    public function getSite()
+    {
+        return $this->site;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Contact
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Contact
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Contact
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }

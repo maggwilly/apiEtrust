@@ -64,10 +64,10 @@ class Representation extends \AppBundle\Entity\Representation implements \Doctri
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fonction', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'langue', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'sexe', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'dateNaissance', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'document', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'numeroDoc', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'expireDate', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'virifiedAt');
+            return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fonction', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'langue', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'sexe', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'dateNaissance', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'document', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fournie', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'numeroDoc', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'expireDate', 'requestForVerification');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fonction', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'langue', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'sexe', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'dateNaissance', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'document', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'numeroDoc', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'expireDate', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'virified', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'virifiedAt');
+        return array('__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'nom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fonction', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'prenom', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'defined', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'ville', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'pays', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'langue', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'adresse', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'telephone', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'email', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'sexe', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'dateNaissance', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'document', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'fournie', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'numeroDoc', '' . "\0" . 'AppBundle\\Entity\\Representation' . "\0" . 'expireDate', 'requestForVerification');
     }
 
     /**
@@ -549,6 +549,94 @@ class Representation extends \AppBundle\Entity\Representation implements \Doctri
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', array());
 
         return parent::getEmail();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFournie($fournie)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFournie', array($fournie));
+
+        return parent::setFournie($fournie);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFournie()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFournie', array());
+
+        return parent::getFournie();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDefined($defined)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDefined', array($defined));
+
+        return parent::setDefined($defined);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDefined()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDefined', array());
+
+        return parent::getDefined();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVerificationRequestedAt', array($verificationRequestedAt));
+
+        return parent::setVerificationRequestedAt($verificationRequestedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVerificationRequestedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getVerificationRequestedAt', array());
+
+        return parent::getVerificationRequestedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRequestForVerification', array($requestForVerification));
+
+        return parent::setRequestForVerification($requestForVerification);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestForVerification()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRequestForVerification', array());
+
+        return parent::getRequestForVerification();
     }
 
 }

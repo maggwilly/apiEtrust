@@ -1,0 +1,9 @@
+AppBundle\Entity\Event:
+    exclusion_policy: none
+    properties:
+        id:
+            groups: ['event','full' ]
+        message:
+            groups: ['event','full'  ]
+        nom:
+            groups: ['event','full'  ]

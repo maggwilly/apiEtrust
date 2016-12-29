@@ -23,16 +23,16 @@ class Payement implements InfoInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="orangeMoney",  type="boolean")
+     * @ORM\Column(name="orangeMoney", type="string", length=255, nullable=true)
      */
-    private $orangeMoney=true;
+    private $orangeMoney;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mtnMoney", type="boolean")
+     * @ORM\Column(name="mtnMoney", type="string", length=255, nullable=true)
      */
-    private $mtnMoney=true;
+    private $mtnMoney;
 
     /**
      * @var string
@@ -46,20 +46,36 @@ class Payement implements InfoInterface
      * @ORM\Column(name="moneyTransfert",  type="boolean")
      */
     private $moneyTransfert=true;
-
     /**
      * @var bool
      *
-     * @ORM\Column(name="virified", type="boolean",nullable=true)
+     * @ORM\Column(name="defined", type="boolean",nullable=true)
      */
-    private $virified=false;
+    private $defined=false;
+   /**
+     * @var string
+     *
+     * @ORM\Column(name="mobileTransfert",  type="boolean")
+     */
+    private $mobileTransfert=true;
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="apresReception",  type="string")
+     */
+    private $apresReception=true;
 
-    /**
+     /**
      * @var bool
      *
-     * @ORM\Column(name="virified_at", type="datetime",nullable=true)
+     * @ORM\Column(name="fournie", type="boolean", nullable=true)
      */
-    private $virifiedAt;
+    private $fournie=false;
+    /**
+   * @ORM\OneToOne(targetEntity="AppBundle\Entity\Request", cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=true)
+   */
+    protected $requestForVerification;
     /**
      * Get id
      * @return integer 
@@ -210,5 +226,143 @@ class Payement implements InfoInterface
     public function getPayementLivraison()
     {
         return $this->payementLivraison;
+    }
+
+    /**
+     * Set apresReception
+     *
+     * @param string $apresReception
+     * @return Payement
+     */
+    public function setApresReception($apresReception)
+    {
+        $this->apresReception = $apresReception;
+
+        return $this;
+    }
+
+    /**
+     * Get apresReception
+     *
+     * @return string 
+     */
+    public function getApresReception()
+    {
+        return $this->apresReception;
+    }
+
+    /**
+     * Set fournie
+     *
+     * @param boolean $fournie
+     * @return Payement
+     */
+    public function setFournie($fournie)
+    {
+        $this->fournie = $fournie;
+
+        return $this;
+    }
+
+    /**
+     * Get fournie
+     *
+     * @return boolean 
+     */
+    public function getFournie()
+    {
+        return $this->fournie;
+    }
+
+    /**
+     * Set defined
+     *
+     * @param boolean $defined
+     * @return Payement
+     */
+    public function setDefined($defined)
+    {
+        $this->defined = $defined;
+
+        return $this;
+    }
+
+    /**
+     * Get defined
+     *
+     * @return boolean 
+     */
+    public function getDefined()
+    {
+        return $this->defined;
+    }
+
+    /**
+     * Set mobileTransfert
+     *
+     * @param boolean $mobileTransfert
+     * @return Payement
+     */
+    public function setMobileTransfert($mobileTransfert)
+    {
+        $this->mobileTransfert = $mobileTransfert;
+
+        return $this;
+    }
+
+    /**
+     * Get mobileTransfert
+     *
+     * @return boolean 
+     */
+    public function getMobileTransfert()
+    {
+        return $this->mobileTransfert;
+    }
+
+    /**
+     * Set verificationRequestedAt
+     *
+     * @param \DateTime $verificationRequestedAt
+     * @return Payement
+     */
+    public function setVerificationRequestedAt($verificationRequestedAt)
+    {
+        $this->verificationRequestedAt = $verificationRequestedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get verificationRequestedAt
+     *
+     * @return \DateTime 
+     */
+    public function getVerificationRequestedAt()
+    {
+        return $this->verificationRequestedAt;
+    }
+
+    /**
+     * Set requestForVerification
+     *
+     * @param \AppBundle\Entity\Request $requestForVerification
+     * @return Payement
+     */
+    public function setRequestForVerification(\AppBundle\Entity\Request $requestForVerification = null)
+    {
+        $this->requestForVerification = $requestForVerification;
+
+        return $this;
+    }
+
+    /**
+     * Get requestForVerification
+     *
+     * @return \AppBundle\Entity\Request 
+     */
+    public function getRequestForVerification()
+    {
+        return $this->requestForVerification;
     }
 }
