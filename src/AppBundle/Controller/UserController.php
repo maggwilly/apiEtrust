@@ -47,7 +47,7 @@ class UserController extends Controller
         $entity = new User();
 
         $form = $this->createCreateForm($entity,['validation_groups'=>['Default', 'New']]);
-        $form->submit($request->request->all()); // Validation des données
+        $form->submit($request->request->all(),false); // Validation des données
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
              $encoder = $this->get('security.password_encoder');
